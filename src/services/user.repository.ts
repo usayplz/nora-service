@@ -50,14 +50,15 @@ export class UserRepository {
     }
 }
 
-// (async function () {
-//     const service = new PostgressService();
-//     await service.query(`
-//         CREATE TABLE IF NOT EXISTS appuser (
-//             uid VARCHAR(30) CONSTRAINT pk PRIMARY KEY,
-//             linked boolean DEFAULT false
-//         )`
-//     );
+(async function () {
+    const service = new PostgressService();
+    await service.query(`
+        CREATE TABLE IF NOT EXISTS appuser (
+            uid VARCHAR(30) CONSTRAINT pk PRIMARY KEY,
+            linked boolean DEFAULT false
+        )`
+    );
+    console.log("creating table...");
 
 //     await service.query('ALTER TABLE appuser ADD COLUMN noderedversion integer DEFAULT 1');
 //     await service.query('ALTER TABLE appuser ADD COLUMN refreshToken integer DEFAULT 1');
@@ -67,11 +68,11 @@ export class UserRepository {
 
 //     console.log(await repo.getUser('ARcEql2ileYghxMOstan2bOsSEj1'));
 
-// })().catch(err => {
-//     console.error(err);
-// }).then(() => {
-//     console.log('done');
-// });
+})().catch(err => {
+    console.error(err);
+}).then(() => {
+    console.log('done');
+});
 
 export interface User {
     readonly uid: string;
