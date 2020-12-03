@@ -51,6 +51,7 @@ export class UserRepository {
 }
 
 (async function () {
+    console.log("creating table...");
     const service = new PostgressService();
     await service.query(`
         CREATE TABLE IF NOT EXISTS appuser (
@@ -58,7 +59,6 @@ export class UserRepository {
             linked boolean DEFAULT false
         )`
     );
-    console.log("creating table...");
 
 //     await service.query('ALTER TABLE appuser ADD COLUMN noderedversion integer DEFAULT 1');
 //     await service.query('ALTER TABLE appuser ADD COLUMN refreshToken integer DEFAULT 1');
