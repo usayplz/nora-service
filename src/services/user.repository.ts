@@ -67,11 +67,11 @@ export class UserRepository {
 
 //     console.log(await repo.getUser('ARcEql2ileYghxMOstan2bOsSEj1'));
 
-})().catch(err => {
-    console.error(err);
-}).then(() => {
-    console.log('done');
-});
+// })().catch(err => {
+//     console.error(err);
+// }).then(() => {
+//     console.log('done');
+// });
 
 export interface User {
     readonly uid: string;
