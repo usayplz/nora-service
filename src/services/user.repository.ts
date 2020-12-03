@@ -59,7 +59,7 @@ export class UserRepository {
         )`
     );
 
-    // await service.query('ALTER TABLE appuser ADD COLUMN noderedversion integer DEFAULT 1');
+    await service.query('ALTER TABLE appuser ADD COLUMN noderedversion integer DEFAULT 1');
     await service.query('ALTER TABLE appuser ADD COLUMN refreshToken integer DEFAULT 1');
     // const repo = new UserRepository(service);
     // await repo.incrementNoderedTokenVersion('ARcEql2ileYghxMOstan2bOsSEj1');
