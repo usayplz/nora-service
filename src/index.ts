@@ -8,6 +8,7 @@ import { serviceSockets } from './config';
 import { container } from './container';
 import { app } from './http/app';
 import { initWebSocketListener } from './socket';
+// import { PostgressService } from './services/postgress.service';
 
 const  fireBaseExports: any = {};
 export = fireBaseExports;
@@ -38,3 +39,27 @@ if (typeof process.env.FIREBASE_CONFIG === 'undefined') {
   });
 }
 
+
+// (async function () {
+//     console.log("creating table...");
+//     const service = new PostgressService();
+//     await service.query(`
+//         CREATE TABLE IF NOT EXISTS appuser (
+//             uid VARCHAR(30) CONSTRAINT pk PRIMARY KEY,
+//             linked boolean DEFAULT false
+//         )`
+//     );
+// 
+//     await service.query('ALTER TABLE appuser ADD COLUMN noderedversion integer DEFAULT 1');
+//     await service.query('ALTER TABLE appuser ADD COLUMN refreshToken integer DEFAULT 1');
+//     const repo = new UserRepository(service);
+//     await repo.incrementNoderedTokenVersion('ARcEql2ileYghxMOstan2bOsSEj1');
+//     const users = await service.query('select * from appuser');
+// 
+//     console.log(await repo.getUser('ARcEql2ileYghxMOstan2bOsSEj1'));
+// 
+// })().catch(err => {
+//     console.error(err);
+// }).then(() => {
+//     console.log('done');
+// });
